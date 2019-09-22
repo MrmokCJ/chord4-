@@ -7,13 +7,14 @@ import requests
 import re
 
 
-
+#定义一个获取目标url里HTML内容的一个方法
 def get_url(url):
     
 
     headers = {'User-Agent':'Mozilla/5.0 3578.98 Safari/537.36'}
 
     response = requests.request("GET", url, headers=headers)
+#为了解决脑人的中文编码问题
     response.encoding = 'utf-8'
     return response
     
